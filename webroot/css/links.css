@@ -1,0 +1,65 @@
+/** --------------------------------------------------------------
+ * Icons
+ *
+ */
+ul.icons {
+  margin: 0;
+  margin-bottom: 1.375em;
+  padding: 0;
+  list-style: none;
+}
+
+ul.icons li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+/** --------------------------------------------------------------
+ * Navbar: Plain style, nothing special
+ *
+ */
+
+ 
+ul.nb-plain {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.nb-plain li {
+  padding: 1em 1em 1em 1em;
+  margin: 0.5em;
+  display: inline;
+}
+
+ul.nb-plain li:first-child {
+  padding-left: 0;
+}
+
+ul.nb-plain li.selected a {
+  border-top: 10px solid #993;
+
+   border-left: 3px solid #993;
+  border-right: 3px solid #993;  
+  border-bottom: 3px solid #993;
+}    
+
+ul.nb-plain a {
+  margin: 3px;
+  background-color: #AD3;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}  
+
+ul.nb-plain a:hover {
+
+  border-top: 7px solid #9FF;
+     border-left: 7px solid #9FF;
+  border-right: 7px solid #9FF;
+  border-bottom: 7px solid #9FF;
+  text-decoration: none;
+}
