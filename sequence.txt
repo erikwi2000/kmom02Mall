@@ -1,0 +1,9 @@
+note left of  dice.php: ?roll=12&faces=12
+dice.php->bootstrap.php: include
+dice.php->CDice: new CDice($faces)
+dice.php->CHistogram: new CHistogram
+dice.php->CDice: Roll($times)
+dice.php->CHistogram: GetHistogramIncludeEmpty()
+dice.php->CDice: GetTotal()
+dice.php->CDice: GetAverage()
+

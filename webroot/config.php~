@@ -69,7 +69,6 @@ $bwix['header'] = <<<EOD
 <img class='sitelogo' src='img/oophp.png' alt='oophp Logo'/>
 <span class='sitetitle'>Me oophp</span>
 <span class='siteslogan'>Min Me-sida i kursen Databaser och Objektorienterad PHP-programmering</span>
-<link rel="shortcut icon" href="img/me1favicon.png" >
 EOD;
 //dump('header');
 $bwix['footer'] = <<<EOD
@@ -143,8 +142,8 @@ $bwix['navbar'] = array(
  */
 //$bwix['stylesheet'] = 'css/style.css';
 $bwix['stylesheets'] = array('css/style.css');
-$bwix['favicon']    = 'img/me1favicon.png';
-//xxxxx$bwix['favicon']    = 'favicon_oophp.ico';
+$bwix['favicon']    = 'favicon_oophp.ico';
+
 
 
 /**
