@@ -1,0 +1,10 @@
+note left of dice.php: ?roll=12&faces=12
+dice.php->bootstrap.php: include
+note left of dice.php: ?session start
+dice.php->CDiceHand: new CDiceHand($faces=2)
+dice.php->CDiceHand: Roll($times)
+CDice->CDiceImage: extends CDice
+CDiceHand->CDiceImage: new CDiceImage
+dice.php->CDiceHand: GetRollsAsImageList()
+dice.php->CDiceHand: GetTotal()
+dice.php->CDiceHand: GetRoundTotal()
