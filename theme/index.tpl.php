@@ -3,7 +3,7 @@
 <head>
 <meta charset='utf-8'/>
 <title><?=get_title($title)?></title>
-<?php if(isset($favicon)): ?><link rel='shortcut icon' href='<?=$favicon?>'/><?php endif; ?>
+<?php if(isset($favicon)): ?><link rel='icon' href='<?=$favicon?>'/><?php endif; ?>
 <?php foreach($stylesheets as $val): ?>
 <?php if(isset($inlinestyle)): ?><style><?=$inlinestyle?></style><?php endif; ?>
 <link rel='stylesheet' type='text/css' href='<?=$val?>'/>
@@ -14,12 +14,11 @@
   <div id='wrapper'>
     <div id='header'><?=$header?></div>
     <?php if(isset($navbar)): ?><div id='navbar'><?=get_navbar($navbar)?></div><?php endif; ?>
-		<?php 
-		//dump($navbar); 
-		?>
 
     <div id='main'><?=$main?></div>
+
     <div id='footer'><?=$footer?></div>
+
     <?php if(isset($debug)): ?><div id='debug'><?=$debug?></div><?php endif; ?>
   </div>
 

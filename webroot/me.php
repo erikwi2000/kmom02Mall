@@ -7,7 +7,7 @@
 
 //echo "Dir= in me.php at webroot<br>" . __DIR__ ;
 include(__DIR__ .'/config.php'); 
-//echo "<br>Dir= after config include <br>" . __DIR__ ;
+//echo "<br>Dir= after config include <br>" . __DIR__ .'/config.php' ;
 
 //echo "<br>--" . __DIR__ . "    4";
 

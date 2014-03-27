@@ -14,7 +14,7 @@ include(__DIR__.'/config.php');
 //include 'theme\functions.php';
 //echo url() . "--2<br>";
 $mepath = url() . '/../me.php';
-//Secho "<br> Mee-path" . $mepath;
+//echo "<br> Mee-path" . $mepath;
 
 //echo $_SERVER['HTTP_HOST'] . "--3<br>";
 //echo $_SERVER['REQUEST_URI'] . "--4<br>";
@@ -29,6 +29,15 @@ $bwix['paths'] .= '<p>bwix: <a href="http://www.student.bth.se/~bjvi13/oophp/kmo
 $bwix['paths'] .= '<p>me-sida:<a href="' . $mepath . '">me-sidan</a>';
 $bwix['paths'] .= '<p>bwix:<a href="' . $mepath . "/../hello.php" . '">bwix-sidan</a>';
 $bwix['paths'] .= '<p>github: <a href="https://github.com/erikwi2000/kmom01Mall">github</a>';
+
+// Fixa länkarna både statiska och dynamiska kmom02
+$bwix['paths2'] = '<p>me-sida:<a href="http://www.student.bth.se/~bjvi13/oophp/kmom02/kmom02Mall/webroot/me.php">me-sidan</a>';
+$bwix['paths2'] .= '<p>bwix: <a href="http://www.student.bth.se/~bjvi13/oophp/kmom02/kmom02Mall/webroot/hello.php">bwix-sidan</a>' ;
+$bwix['paths2'] .= '<p>me-sida:<a href="' . $mepath . '">me-sidan</a>';
+$bwix['paths2'] .= '<p>bwix:<a href="' . $mepath . "/../hello.php" . '">bwix-sidan</a>';
+$bwix['paths2'] .= '<p>github: <a href="https://github.com/erikwi2000/kmom01Mall">github</a>';
+
+
 
 
 $bwix['main'] = <<<EOD
@@ -72,11 +81,41 @@ XAMPP används.
 
 
 
-<h2>Kmom02: ...</h2>
+<h2>Kmom02: Objektorienterad programmering i PHP</h2>
 
-<p>Redovisningstext...</p>
+<p>En jobbig resa. Tuffast hittils tror att vartefter vi rapporterar 
+    svårigheter så kommer ni att justera vartefter. Jag råkade ut för en "konstig sak":
+     använde både Notepad och NetBeans samtidigt och projekten fungerade perfekt 
+         och validerade förutom lite strul med "buttons".
+Sagt och gjort fixade och plötsligen så dog sessionen vid varje inmatning, uppenbarligen
+så hade jag på något sätt plockat bort en rad eller så så att det 
+fungerade inte.
+Sylvanas var en mycket hjälpsam "chattare". Stort TACK Jane!
+     Hoppas en del "findings" är väl tatuerade i minnet.</p>
+<p> Men NetBeans och www.websequencediagrams.com RIKTIGT NICE 
+liksom knappgeneratorer. Det  finns så mycket där ute så en liten del vore nog.</p>
+<p> Ett litet nytt mindset behövs för mig för att ta mig an detta. 
+Själva upplägget med en bastant 
+plattform där man hela tiden ser 
+till att åtminstone alla tidigare gjorda saker fungerar  bra.
+<br>Lite nytt hittar man på, lägger till osv. så efter en resa så finns mer i "skelettet" än som skapades från början.
+<p> Tyvärr så har jag ägnat mycket tid åt en sak som jag gjort förut och som fanns dvs
+att visa tärningen på sidan efter att jag slagit. (../img/... etc.)<br>
+<br>Det som inte fungerade var kopplingen till foldrarna för bilden....och
+detta har jag ju gjort flera gänger MEN ded tog tid...denna gången också.
+<p> Som förut så är 20 stationer riktigt bra, för de flesta avsnitten, 
+DOCK saknar jag här precis som i första kursen ett skelett med de "vital few" som man kan luta sig mot då
+det "strular". <br>Böckerna är bra MEN ack så kompletta så här i början. 
+Det skulle inte sitta fel med en översikt MEN tror dock att den finns där ute det är oftast bara att "surfa på"
+trodde inte det fanns så mycket programvara och dessutom talar jag om fria program.
+<p>Borde det inte kunna vara ett, eller flera, exjobb som skapar en sökbar kunskapsbank
+anpassad/lämplig till de kurser ni kör? 
+<p>Många gånger ser jag inte skogen bara för en massa träd dessutom så har jag svårt för semantiken eftersom jag har ett annat språk då jag tolkar kod¨
+dvs ibland ser exemplen ut som ett helt främmande språk....dock bit för bit ungefär som programkoden så 
+drar jag mig lite framåt i varje avsnitt.
 
 
+{$bwix['paths2']} 
 <h2>Kmom03: ...</h2>
 
 <p>Redovisningstext...</p>
@@ -85,7 +124,8 @@ XAMPP används.
 <h2>Kmom04: ...</h2>
 
 <p>Redovisningstext...
-www.websequencediagrams.com så nice speciellt napkin
+www.websequencediagrams.com så nice speciellt napkin<br>
+kkkkkkkkkkkkkkkkk
 
 </p>
 

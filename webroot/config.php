@@ -15,24 +15,7 @@ ini_set('display_errors', 1);     // Display all errors
 ini_set('output_buffering', 0);   // Do not buffer outputs, write directly
 
 
-/**
- * Start the session.
- *
- */
- 
-session_name(preg_replace('/[:\.\/-_]/', '', __DIR__)); 
-session_start();
- 
-
- 
-//session_unset();
-//session_destroy(); 
- 
-
-
-
-/**
- * Define BWi paths.
+/** * Define BWi paths.
  *
  */
  //echo "<br> Dir <br>" . __DIR__ . "<br>";
@@ -40,13 +23,13 @@ define('BWI_INSTALL_PATH', __DIR__ . '/../');
 //echo "BWI install path <br>" . BWI_INSTALL_PATH . "</br>";
 define('BWI_THEME_PATH', BWI_INSTALL_PATH . 'theme/render.php');
 //echo  "BWI theme path <br>" . BWI_THEME_PATH . "</br>";
-	//var_dump(BWI_THEME_PATH);
+//	var_dump(BWI_THEME_PATH);
 
 /**
  * Include bootstrapping functions.
  *
  */
- //echo "+++---+++ " . BWI_INSTALL_PATH;
+  //echo "+++---+++ " . BWI_INSTALL_PATH;
 include(BWI_INSTALL_PATH . '/src/bootstrap.php');
 //echo "<br>BWI install path <br>" .  BWI_INSTALL_PATH;
 //echo BWI_INSTALL_PATH . '/src/bootstrap.php';
@@ -57,19 +40,22 @@ include(BWI_INSTALL_PATH . '/src/bootstrap.php');
  */
 $bwix = array();
 
-
 /**
  * Site wide settings.
  *
  */
+ 
 $bwix['lang']         = 'sv';
 $bwix['title_append'] = ' | oophp kursmaterial';
-
+$bwix['stylesheets'] = array('css/style.css');
+$bwix['favicon']    = 'img/me1favicon.png';
+//<link rel='icon' href='img/me1favicon.png' >
 $bwix['header'] = <<<EOD
 <img class='sitelogo' src='img/oophp.png' alt='oophp Logo'/>
 <span class='sitetitle'>Me oophp</span>
 <span class='siteslogan'>Min Me-sida i kursen Databaser och Objektorienterad PHP-programmering</span>
-<link rel="shortcut icon" href="img/me1favicon.png" >
+        
+
 EOD;
 //dump('header');
 $bwix['footer'] = <<<EOD
@@ -92,8 +78,8 @@ $bwix['byline'] = <<<EOD
       <li><a href='http://se.linkedin.com/in/erikwi2000'><img src='img/glyphicons/png/glyphicons_377_linked_in.png' alt='linkedin-icon' title='Björn Viklund på LinkedIn' width='24' height='24'/></a></li>
       <li><a href='https://www.facebook.com/oldman24'><img src='img/glyphicons/png/glyphicons_390_facebook.png' alt='facebook-icon' title='Björn Viklund på Facebook' width='24' height='24'/></a></li>
       <li><a href='https://twitter.com/erikwi2000'><img src='img/glyphicons/png/glyphicons_392_twitter.png' alt='twitter-icon' title='Björn Viklund på Twitter' width='24' height='24'/></a></li>
- <!--     <li><a href='http://mikaelroos.se/youtube'><img src='img/glyphicons/png/glyphicons_382_youtube.png' alt='youtube-icon' title='Björn Viklund på YouTube' width='24' height='24'/></a></li>
-      <li><a href='http://mikaelroos.se/flickr'><img src='img/glyphicons/png/glyphicons_395_flickr.png' alt='flickr-icon' title='Björn Viklund på Flickr' width='24' height='24'/></a></li>
+ <!--       <li><a href='http://mikaelroos.se/youtube'><img src='img/glyphicons/png/glyphicons_382_youtube.png' alt='youtube-icon' title='Björn Viklund på YouTube' width='24' height='24'/></a></li>
+             <li><a href='http://mikaelroos.se/flickr'><img src='img/glyphicons/png/glyphicons_395_flickr.png' alt='flickr-icon' title='Björn Viklund på Flickr' width='24' height='24'/></a></li>
   -->
 	<li><a href='http://instagram.com/erikwi2000'><img src='img/glyphicons/png/glyphicons_412_instagram.png' alt='instagram-icon' title='Björn Viklund på Instagram' width='24' height='24'/></a></li>
 	<li><a href='https://github.com/erikwi2000'><img src='img/glyphicons/png/glyphicons_381_github.png' alt='github-icon' title='Björn Viklund på GitHub' width='24' height='24'/></a></li>
@@ -123,6 +109,7 @@ $bwix['navbar'] = array(
   'items' => array(
     'hem'         => array('text'=>'Hem',         'url'=>'me.php',          'title' => 'Min presentation om mig själv'),
     'redovisning' => array('text'=>'Redovisning', 'url'=>'redovisning.php', 'title' => 'Redovisningar för kursmomenten'),
+    'tarningsspel' => array('text'=>'Tärningsspel', 'url'=>'tarning.php', 'title' => 'SpelaTärning'),   
     'kallkod'     => array('text'=>'Källkod',     'url'=>'source.php',      'title' => 'Se källkoden'),
   ),
   'callback_selected' => function($url) {
@@ -142,8 +129,8 @@ $bwix['navbar'] = array(
  *
  */
 //$bwix['stylesheet'] = 'css/style.css';
-$bwix['stylesheets'] = array('css/style.css');
-$bwix['favicon']    = 'img/me1favicon.png';
+//$bwix['stylesheets'] = array('css/style.css');
+//$bwix['favicon']    = 'img/me1favicon.png';
 //xxxxx$bwix['favicon']    = 'favicon_oophp.ico';
 
 

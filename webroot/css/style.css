@@ -3,6 +3,31 @@
  */
 @import url(links.css);
 
+/**
+ * CSS sprite for a dice with six faces.
+ *
+ */
+ul.dice {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.dice li {
+  display: inline-block;
+  padding: 0;
+  margin: 0 4px 0 0;
+  width: 32px;
+  height: 32px;
+  background: url(img/dice-faces.jpg) no-repeat;
+}
+
+ul.dice li.dice-1 { background-position: -160px 0px; }
+ul.dice li.dice-2 { background-position: -128px 0px; }
+ul.dice li.dice-3 { background-position:  -96px 0px; }
+ul.dice li.dice-4 { background-position:  -64px 0px; }
+ul.dice li.dice-5 { background-position:  -32px 0px; }
+ul.dice li.dice-6 { background-position:    0px 0px; }
 
 /**
  * General elements
@@ -62,8 +87,11 @@ h1 {
   width: 70%;
   margin-bottom: 2em;
   margin-top: 1em;
-  padding:0.2em;
-  background-color: #ECFD3E;
+  padding:0.6em;
+      background-color: #9F9;
+	background-color: #F21100;
+	  	border-radius:13px;
+	border:7px solid #4b8f29;
 
 }
 
@@ -119,5 +147,46 @@ figcaption {
 figure.right {
   float: right;
 }
+/**
+ * CSS sprite for a dice with six faces.
+ *
+ */
+ul.dice {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
+ul.dice li {
+  display: inline-block;
+  padding: 0;
+  margin: 0 4px 0 0;
+  width: 32px;
+  height: 32px;
+  background: url(img/dice-faces.jpg) no-repeat;
+}
+
+ul.dice li.dice-1 { background-position: -160px 0px; }
+ul.dice li.dice-2 { background-position: -128px 0px; }
+ul.dice li.dice-3 { background-position:  -96px 0px; }
+ul.dice li.dice-4 { background-position:  -64px 0px; }
+ul.dice li.dice-5 { background-position:  -32px 0px; }
+ul.dice li.dice-6 { background-position:    0px 0px; }
+
+
+
+a.LinkButton {
+  border-style: solid;
+  border-width : 3px 3px 3px 3px;
+  text-decoration : none;
+  background-color: #9F9;
+  font-family: Arial;
+  color: #000;
+  padding : 4px;
+  border-color : #990000;
+  	border-radius:13px;
+	border:7px solid #4b8f29;
+        box-shadow: 0px 10px 14px -7px #3e7327;
+
+}
 

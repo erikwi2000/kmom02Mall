@@ -19,10 +19,12 @@ set_exception_handler('myExceptionHandler');
  * Autoloader for classes.
  *
  */
+// echo "Here";
 function myAutoloader($class) {
-  $path = BWI_INSTALL_PATH . "/src/{$class}/{$class}.php";
+  $path = BWI_INSTALL_PATH . "src/{$class}/{$class}.php";
   if(is_file($path)) {
     include($path);
+	//	echo "<br>Path Autoloader XXXXXXXXXXXXXXXXXX--" . $path . "<br>";
   }
 }
 spl_autoload_register('myAutoloader');

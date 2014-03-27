@@ -30,8 +30,10 @@ ul.nb-plain {
 }
 
 ul.nb-plain li {
-  padding: 1em 1em 1em 1em;
-  margin: 0.5em;
+  padding: 1px 1px 1px 1px;
+  margin: 0.1em;
+  margin-left: 1px;
+    margin-right: 1px;
   display: inline;
 }
 
@@ -40,19 +42,25 @@ ul.nb-plain li:first-child {
 }
 
 ul.nb-plain li.selected a {
-  border-top: 10px solid #993;
-
-   border-left: 3px solid #993;
-  border-right: 3px solid #993;  
-  border-bottom: 3px solid #993;
+  	border-radius:13px;
+border-top: 10px solid #993;
+   border-left: 6px solid #993;
+  border-right: 6px solid #993;  
+  border-bottom: 10px solid #993;
 }    
 
 ul.nb-plain a {
   margin: 3px;
+  padding: 3px;
   background-color: #AD3;
+  	border-radius:13px;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
+    border-top: 3px solid #993;
+     border-left: 3px solid #993;
+  border-right: 3px solid #993;  
+  border-bottom: 3px solid #993;
 }  
 
 ul.nb-plain a:hover {

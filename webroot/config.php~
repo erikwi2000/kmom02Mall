@@ -22,7 +22,7 @@ ini_set('output_buffering', 0);   // Do not buffer outputs, write directly
  
 session_name(preg_replace('/[:\.\/-_]/', '', __DIR__)); 
 session_start();
- 
+// echo session_name();
 
  
 //session_unset();
@@ -49,7 +49,7 @@ define('BWI_THEME_PATH', BWI_INSTALL_PATH . 'theme/render.php');
  //echo "+++---+++ " . BWI_INSTALL_PATH;
 include(BWI_INSTALL_PATH . '/src/bootstrap.php');
 //echo "<br>BWI install path <br>" .  BWI_INSTALL_PATH;
-//echo BWI_INSTALL_PATH . '/src/bootstrap.php';
+echo "<br> Bootstrap path <br>" . BWI_INSTALL_PATH . 'src/bootstrap.php';
 
 /**
  * Create the BWi variable.
@@ -69,6 +69,7 @@ $bwix['header'] = <<<EOD
 <img class='sitelogo' src='img/oophp.png' alt='oophp Logo'/>
 <span class='sitetitle'>Me oophp</span>
 <span class='siteslogan'>Min Me-sida i kursen Databaser och Objektorienterad PHP-programmering</span>
+<link rel="shortcut icon" href="img/me1favicon.png" >
 EOD;
 //dump('header');
 $bwix['footer'] = <<<EOD
@@ -122,6 +123,7 @@ $bwix['navbar'] = array(
   'items' => array(
     'hem'         => array('text'=>'Hem',         'url'=>'me.php',          'title' => 'Min presentation om mig själv'),
     'redovisning' => array('text'=>'Redovisning', 'url'=>'redovisning.php', 'title' => 'Redovisningar för kursmomenten'),
+    'tarningsspel' => array('text'=>'Tärningsspel', 'url'=>'tarning.php', 'title' => 'SpelaTärning'),   
     'kallkod'     => array('text'=>'Källkod',     'url'=>'source.php',      'title' => 'Se källkoden'),
   ),
   'callback_selected' => function($url) {
@@ -142,8 +144,8 @@ $bwix['navbar'] = array(
  */
 //$bwix['stylesheet'] = 'css/style.css';
 $bwix['stylesheets'] = array('css/style.css');
-$bwix['favicon']    = 'favicon_oophp.ico';
-
+$bwix['favicon']    = 'img/me1favicon.png';
+//xxxxx$bwix['favicon']    = 'favicon_oophp.ico';
 
 
 /**
