@@ -1,0 +1,18 @@
+private $dices;					// Sidor på tärningen
+  	private $numDices;      // Antal tärningar
+		private $sum;           //summan av en tärnings slag 
+		public  $sumRound;			// kan nollas
+		public  $sumRoundAll;			// alla gjorda slag
+		private $highScore;   //sparade slag
+		
+//				private $sumSavedRounds;    
+		
+		public $html;
+    private $rounds;
+
+
+		private $deal;
+		
+
+
+		private $sumRoll;           //summan av alla tärningars slag aka EN träning

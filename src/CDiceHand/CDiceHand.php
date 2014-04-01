@@ -11,14 +11,14 @@ class CDiceHand {
    */
    	private $dices;					// Sidor på tärningen
   	private $numDices;      // Antal tärningar
-		private $sum;           //summan av alla tärningars slag aka EN
-        public $html;
-    private $rounds;
-		private $sumRound;
-		private $highScore;
-
-	
-
+		private $sum;           //summan av en tärnings slag 
+		private  $sumRound;			// kan nollas
+		private  $sumRoundAll;			// alla gjorda slag
+		private $highScore;   //sparade slag
+		public  $dicePic; 
+		public $html;
+                private  $rounds;
+                private $sumRoll;           //summan av alla tärningars slag aka EN träning
 
   /**
    * Constructor
@@ -31,12 +31,15 @@ class CDiceHand {
     }
     $this->numDices = $numDices;
     $this->sum = 0;
-    
-
-    $this->sum = 0;
     $this->sumRound = 0;
-		$this->rounds = 0;
+	  $this->sumRoundAll = 0;	
 		$this->highScore = 0;
+//    $this->sumSavedRounds = 0;
+		$this->rounds = 0;
+
+		$this->deal = 0;
+		$this->dicePic = array();
+		$this->dicePic = "";
 		
 					
   }
@@ -53,7 +56,24 @@ class CDiceHand {
   ------------------------
 */
 	
+  public function GetInitResult () {
 
+      if(isset($_SESSION['dicehand'])) {
+  $hand = $_SESSION['dicehand'];
+}
+else {
+	//$hand = new CDiceHand(1);
+  $_SESSION['dicehand'] = $hand;
+}
+   //  unset($dicehand);
+    $hand->sumRound = 0;
+    $hand->sumRoundAll = 0;		
+		$hand->rounds = 0;
+		$hand->highScore = 0;	
+		$this->dicePic = array();		
+	//	$hand->dicePic = ""; 
+                
+  }
 
 
   /**
@@ -61,16 +81,22 @@ class CDiceHand {
    *
    */
   public function Roll() {
+	
     $this->sum = 0;
     for($i=0; $i < $this->numDices; $i++) {
       $roll = $this->dices[$i]->Roll(1);
       $this->sum += $roll;
       $this->sumRound += $roll;
+			$this->sumRoundAll += $roll;	
+								$this->dicePic[] += $roll;	
+		//		print_r($this->dicePic) ;	
 
-			if ($this->sumRound > $this->highScore)
-			{
-			$this->highScore = $this->sumRound;
-			}
+
+
+//			if ($this->sumRound > $this->highScore)
+//			{
+//			$this->highScore = $this->sumRound;
+//			}
 			$this->rounds += 1;
     }
   }
@@ -89,7 +115,9 @@ class CDiceHand {
   public function GetRolls() {
     return $this->sum;
   }
-
+ public function GetSumRound() {
+    return $this->sumRound;
+  }
 	
 	// Number of rounds---------------in a play
 	 public function GetRoundsOK() {
@@ -108,19 +136,27 @@ class CDiceHand {
   public function InitRound() {
 	unset($dicehand);
     $this->sumRound = 0;
+    $this->sumRoundAll = 0;		
 		$this->rounds = 0;
-		$this->highScore = 0;		
+		$this->highScore = 0;	
+		$this->dicePic = array();		
+	//	$this->dicePic = "";
   }
 	public function CleanHighScore() {
 			$this->highScore = 0;	
 			$this->sumRound = 0;	
 	}
+/*	public function GetSumRound() {
+	    return $this->sumRound;
+	}*/
 		public function CleanSumRound() {
 	//		$this->highScore = 0;	
+			$this->dicePic = array();
 			$this->sumRound = 0;	
+			$this->sum = 0;
 	}
 		public function SetHighScore() {
-			$this->highScore = $this->sumRound;	
+			$this->highScore = $this->sumRoundAll;	
 	}
 
 
@@ -132,7 +168,10 @@ class CDiceHand {
         
         
   public function GetRoundTotal() {
-    return $this->sumRound;
+    return $this->sumRoundAll;
+  }
+	public function SetRoundTotal() {
+ $this->sumRoundAll = $this->highScore;
   }
   
 //---------------------------------------------
@@ -154,15 +193,44 @@ class CDiceHand {
   //    $hhggl = "<ul class='dice'>";
     
     // echo "<br> inside ---- printing html <br>" . $html . "<br>";   
-    foreach($this->dices as $dice) {       
-      $val = $dice->GetLastRoll();   //  echo "<br> inside function GetRollsAsImageList inside foreach printing val<br>" . $val . "<br>";            
+    if(isset($this->dicePic)) {
+	//	echo "hellobalo";
+		foreach($this->dicePic as $laban) {       
+      $val = $laban;   //  echo "<br> inside function GetRollsAsImageList inside foreach printing val<br>" . $val . "<br>";            
+      $html .= "<li class='dice-{$val}'></li>";
+   }
+    $html .= "</ul>";
+		return $html;}
+  }
+	/*public function RollsAsImageList() {
+//$html = "111111111111111111111111111ksdhfhpkasdhghsakdgfkl";
+	   
+     
+    $html = "<ul class='dice'>";
+  //    $hhggl = "<ul class='dice'>";
+
+    // echo "<br> inside ---- printing html <br>" . $html . "<br>";   
+    foreach($this->dicePic as $dice) {       
+    //  $val = $dice->GetLastRoll();   //  
+			echo "<br> inside function GetRollsAsImageList inside foreach printing val<br>" . $val . "<br>";            
       $html .= "<li class='dice-{$val}'></li>";
    }
     $html .= "</ul>";
 		return $html;
   }
+	*/
 	
 	
+	
+	public function saveRound(){
+
+ //   $this->sumRoundAll += $this->sumRound;
+		$this->highScore = $this->sumRoundAll;
+		$this->sum = 0;
+			    $this->sumRound = 0;
+	}
+
+
 
 
 }

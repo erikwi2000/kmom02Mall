@@ -44,6 +44,7 @@ class CDice {
     for($i = 0; $i < $times; $i++) {
       $this->last = rand(1, $this->faces);
       $this->rolls[] = $this->last;
+	//		echo "sssssssssssssssssssssss";
     }
     return $this->last;
   }
