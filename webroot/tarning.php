@@ -8,7 +8,10 @@ include(__DIR__.'/config.php');
 
 
   session_start(); 
-
+  $dest = FALSE;
+  if(isset($_GET['destroy'])){
+$dest = TRUE;
+  }
 if(isset($_GET['destroy'])) { 
   // Unset all of the session variables. 
   $_SESSION = array(); 
@@ -69,52 +72,24 @@ EOD;
 $bwix['main'] .= $dump->GetAdd1Part();
 
 
+$statString = $hand->GetInputInfo2();
 
-$roll = isset($_GET['roll']) ? true : false;
-$init = isset($_GET['init']) ? true : false;
-$noll = isset($_GET['noll']) ? true : false; 
+$diceList = "";
 
-if(isset($_SESSION['dicehand'])) {
-  $hand = $_SESSION['dicehand'];
-}
-else {
-	$hand = new CDiceHand(1);
-  $_SESSION['dicehand'] = $hand;
-}
+ if(!$dest){
+$diceList = $hand->GetRollsAsImageList(); 
+ }
+ $dest = FALSE;
+    if(isset($statString)) {} else {$statString= "";}
 
 /*
 
-*/
-if($roll) {
-    $hand->Roll();
-    $statStringRoll = $dump->GetRollResult();
-}
-else if($init) {
-  $hand->InitRound();
-   $statStringInit = $hand->GetInitResult();
-  
-	
-}
-else if ($noll) {
-  $hand->saveRound();
-       $statStringNoll = $dump->GetNollResult();	
 
-}
-if($noll){
-$statString = $statStringNoll;
-}
-if($roll){
-$statString = $statStringRoll;
-}
-
-
-if(($roll) or ($noll)){
-$diceList = $hand->GetRollsAsImageList(); 
-}
+    }
 else {
-    $statString= "";
-$diceList = "";
-}
+
+
+}*/
 //    print_r ($dicePic);
 //---------------------------
 $bwix['main'] .= <<<EOD

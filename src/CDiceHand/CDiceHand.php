@@ -55,6 +55,50 @@ class CDiceHand {
   }
   ------------------------
 */
+  
+  
+ public function GetInputInfo2() {
+     
+     if(isset($_SESSION['dump'])) {
+  $dump = $_SESSION['dump'];
+}
+else {
+	$dump = new CDump(1);
+  $_SESSION['dump'] = $dump;
+}
+     $statStringRoll = "EMPTY";
+     $choice = "destruct";
+     $ffff = "";
+ $roll = isset($_GET['roll']) ? true : false;
+ 
+ if($roll){$choice = "roll"; 
+  $this->Roll();
+$ffff = $dump->GetRollResult();
+//echo "<br> ffff result" . $ffff;
+ }
+ 
+$init = isset($_GET['init']) ? true : false;
+
+ if($init){$choice = "init";
+  $this->InitRound();
+  $ffff = $this->GetInitResult();
+//echo "<br> hhhh result" . $ffff;
+ }
+ 
+$noll = isset($_GET['noll']) ? true : false; 
+
+ if($noll){$choice = "noll";
+  $this->saveRound();
+  $ffff = $dump->GetNollResult();
+//echo "<br> gggg result" . $ffff;
+ }
+ 
+ //return $choice;
+ return $ffff;
+ 
+ }
+  
+  
 	
   public function GetInitResult () {
 

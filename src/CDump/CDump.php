@@ -92,6 +92,31 @@ public function GetHello() {
  return $hello;
  }
  
+ public function GetInputInfo() {
+     $statStringRoll = "EMPTY";
+     $choice = "destruct";
+ $roll = isset($_GET['roll']) ? true : false;
+ if($roll){$choice = "roll"; 
+//$dump->GetRollResult();
+ }
+$init = isset($_GET['init']) ? true : false;
+ if($init){$choice = "init";
+ 
+ }
+$noll = isset($_GET['noll']) ? true : false; 
+ if($noll){$choice = "noll";
+ 
+ }
+//echo "<br> choice" . $choice;
+ 
+     
+ 
+ 
+
+return $choice;
+
+ }
+ 
  
  public function GetRollResult () {
      
@@ -102,6 +127,10 @@ else {
 	$hand = new CDiceHand(1);
   $_SESSION['dicehand'] = $hand;
 }
+
+//-------
+
+//--------------------
  $roll = TRUE;
  $engang = "gång.";
  $flergang = "gånger.";
