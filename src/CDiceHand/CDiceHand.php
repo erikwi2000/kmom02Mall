@@ -44,17 +44,7 @@ class CDiceHand {
 					
   }
 	
-/*	---------------------
-    public function __construct($numDices = 5) {
-    for($i=0; $i < $numDices; $i++) {
-      $this->dices[] = new CDiceImage();
-    }
-    $this->numDices = $numDices;
-    echo "<br> num of dices -----  ".  $numDices;
-    $this->sum = 0;
-  }
-  ------------------------
-*/
+
   
   
  public function GetInputInfo2() {
@@ -68,7 +58,7 @@ else {
 }
      $statStringRoll = "EMPTY";
      $choice = "destruct";
-     $ffff = "";
+     $ffff = "NoActivitySet";
  $roll = isset($_GET['roll']) ? true : false;
  
  if($roll){$choice = "roll"; 
@@ -246,23 +236,6 @@ else {
     $html .= "</ul>";
 		return $html;}
   }
-	/*public function RollsAsImageList() {
-//$html = "111111111111111111111111111ksdhfhpkasdhghsakdgfkl";
-	   
-     
-    $html = "<ul class='dice'>";
-  //    $hhggl = "<ul class='dice'>";
-
-    // echo "<br> inside ---- printing html <br>" . $html . "<br>";   
-    foreach($this->dicePic as $dice) {       
-    //  $val = $dice->GetLastRoll();   //  
-			echo "<br> inside function GetRollsAsImageList inside foreach printing val<br>" . $val . "<br>";            
-      $html .= "<li class='dice-{$val}'></li>";
-   }
-    $html .= "</ul>";
-		return $html;
-  }
-	*/
 	
 	
 	

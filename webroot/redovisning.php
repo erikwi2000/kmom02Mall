@@ -113,6 +113,10 @@ anpassad/lämplig till de kurser ni kör?
 <p>Många gånger ser jag inte skogen bara för en massa träd dessutom så har jag svårt för semantiken eftersom jag har ett annat språk då jag tolkar kod¨
 dvs ibland ser exemplen ut som ett helt främmande språk....dock bit för bit ungefär som programkoden så 
 drar jag mig lite framåt i varje avsnitt.
+<p>Litemer. git fungerar riktigt nice, jag printade MOS text till föredraget och det fungerar riktigt
+    fint....dock kanske jag inte lägger upp förrän 
+koden validerat "där uppe". 
+<p> Har flyttat det mesta från page-controller till klasser/funktioner en tuff och rörig resa MEN till nästa gång så blir det bättre.
 
 
 {$bwix['paths2']} 

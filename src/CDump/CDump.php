@@ -154,7 +154,7 @@ if($roll){
 				($hand->GetRolls() < $hand->getHighScore())){ 
                 $hand->setHighScore(); 
                 $statStringRoll .= 
-								"<br>Du är hemma till 100!</h3>"; 
+		"<br>Du är hemma till 100!</h3>"; 
             
         } 
                 }

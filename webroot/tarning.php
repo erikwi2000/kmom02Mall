@@ -72,25 +72,29 @@ EOD;
 $bwix['main'] .= $dump->GetAdd1Part();
 
 
+//$statString = "aaa";
 $statString = $hand->GetInputInfo2();
+//$statString .= "bbbb";
 
 $diceList = "";
 
  if(!$dest){
+ if($statString !== "NoActivitySet")    {
+       //  echo "FAUL";
 $diceList = $hand->GetRollsAsImageList(); 
+ 
  }
+ else {$statString = "";
+ }
+ 
+ }
+ //echo "->". $statString;
+ 
+ 
  $dest = FALSE;
     if(isset($statString)) {} else {$statString= "";}
-
-/*
-
-
-    }
-else {
-
-
-}*/
-//    print_r ($dicePic);
+   // echo "->". $statString;
+//  
 //---------------------------
 $bwix['main'] .= <<<EOD
 {$diceList}
